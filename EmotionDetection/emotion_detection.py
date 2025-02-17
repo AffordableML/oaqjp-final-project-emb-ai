@@ -19,17 +19,17 @@ def emotion_detector(text_to_analyze):
 
     # Format Response
     formatted_response = {
-        "anger:": response_emotions['anger'],
-        "disgust:": response_emotions['disgust'],
-        "fear:": response_emotions['fear'],
-        "joy:": response_emotions['joy'],
-        "sadness:": response_emotions['sadness'],
+        "anger": response_emotions['anger'],
+        "disgust": response_emotions['disgust'],
+        "fear": response_emotions['fear'],
+        "joy": response_emotions['joy'],
+        "sadness": response_emotions['sadness'],
     }
 
     # Sort responses by value
     sorted_resp = dict(sorted(formatted_response.items(), key=lambda item: item[1]))
     
     # Find the largest value as the dominant emotion
-    formatted_response['dominant_emotion'] = list(sorted_resp)[-1][0:len(list(sorted_resp)[-1]) - 1]
+    formatted_response['dominant_emotion'] = list(sorted_resp)[-1][0:len(list(sorted_resp)[-1])]
 
     return formatted_response
